@@ -14,17 +14,17 @@ export default function Home() {
   const idx2 = face2idx(face2);
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex min-h-screen flex-col items-center p-8">
       <h1 className="text-6xl font-bold text-center">
         <span className="text-red-600">Insper</span> ONE
       </h1>
 
-      <div className="flex flex-row items-center mt-8 text-xl gap-2">
-        <span>A face</span>
+      <div className="flex flex-row flex-wrap items-center mt-8 text-xl gap-2">
+        <span className="text-wrap">A face</span>
         <FaceSelect placeholder="Face 1" onChange={setFace1} />
-        <span>é mais nova do que a face</span>
+        <span className="text-wrap">é mais nova do que a face</span>
         <FaceSelect placeholder="Face 2" onChange={setFace2} />
-        <span>?</span>
+        <span className="text-wrap">?</span>
         {face1 && face2 && <span className={`font-bold text-2xl ${idx1 < idx2 ? "text-green-400" : "text-red-600"}`}>{idx1 < idx2 ? "SIM" : "NÃO"}</span>}
       </div>
 
@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center mt-12">
-        <h2 className="text-4xl mb-4">Sequência esperada</h2>
+        <h2 className="text-4xl mb-4 text-center font-bold">Sequência Esperada</h2>
         <Image src="/aging.gif" width={277} height={336} alt="Aging" />
       </div>
     </main>
